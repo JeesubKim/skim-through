@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "skim-through-app"
+version = "0.1.0"
+description = "skim-through-app"
+authors = ["Gshopping <zays.kim@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1"
+djangorestframework = "^3.15.2"
+mysqlclient = "^2.2.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
