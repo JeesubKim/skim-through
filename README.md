@@ -71,6 +71,10 @@ poetry add Django djangorestframework mysqlclient
 poetry shell
 ```
 
+### Running cmd over the poetry
+```
+poetry run python manage.py runserver
+```
 
 ### Updating version minor
 
