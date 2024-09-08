@@ -81,3 +81,44 @@ poetry run python manage.py runserver
 ```
 poetry version minor
 ```
+
+
+#### DB - mysql
+```
+use skim_through;
+create user skim_through@'%' identified by xxx;
+grant all privileges on *.* to skim_through@'%';
+flush privileges;
+```
+
+
+#### Kafka
+
+##### Create topic
+
+```
+kafka-topics.sh --create --topic search --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+```
+
+##### Check topic
+```
+kafka-topics.sh --describe --topic search --bootstrap-server kafka:9092
+
+cd /opt/kafka_2.13-2.8.1/bin/
+```
+
+
+##### Execute consumer
+```
+./kafka-console-consumer.sh --topic search --bootstrap-server kafka:9092
+```
+
+
+##### Execute producer
+```
+./kafka-console-producer.sh --topic search --broker-list kafka:9092
+```
+
+
+###### initial architecture
+![initial architecture](initial_architecture.jpg)
