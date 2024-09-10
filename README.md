@@ -52,7 +52,7 @@ Windows (Add `C:\Users\user-name\AppData\Roaming\Python\Scripts` in your PATH )
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
-### Project setup
+### Project setup with Poetry
 
 #### Init
 
@@ -81,6 +81,16 @@ poetry run python manage.py runserver
 ```
 poetry version minor
 ```
+
+### How to set env location in vm
+
+#### 1. get env path
+```
+poetry env info
+```
+
+#### 2. set path in vs code in `Ctrl + Shift + P` + `"python: Select Interpreter"`
+
 
 
 #### DB - mysql

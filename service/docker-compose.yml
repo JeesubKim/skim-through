@@ -11,7 +11,7 @@ services:
       - "3310:3306"
     
     volumes:
-      - ./data/:/var/lib/mysql
+      - ./mysql/data/:/var/lib/mysql
 
   zookeeper:
     image: wurstmeister/zookeeper
@@ -28,4 +28,18 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./kafka/data/var/run/docker.sock:/var/run/docker.sock
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    volumes:
+      - ./redis/data:/root/redis
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PASSWORD=skim1through!
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=1
+    ports:
+      - 6379:6379

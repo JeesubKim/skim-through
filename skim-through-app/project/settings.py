@@ -78,7 +78,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "skim_through",
         "USER": "skim_through",
-        "PASSWORD": "skim_through",
+        "PASSWORD": "skim1through!",
         "HOST":"localhost",
         "PORT":"3310",
         ""

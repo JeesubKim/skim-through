@@ -1,4 +1,6 @@
 *.pyc
 *.sqlite3
 
-service/data
+service/kafka
+service/mysql
+service/redis
